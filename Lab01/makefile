@@ -2,7 +2,7 @@ CXX = g++
 CFLAGS = -Wall 
 SOURCES = *.cpp
 
-.SILENT: all prog run clean 
+.SILENT: all prog run clean debug 
 
 all: prog
 
