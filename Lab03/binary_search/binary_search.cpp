@@ -28,14 +28,12 @@ bool binarySearch(vector<int> &v, int low, int high, int target) {
 
 	if (v[mid] == target) {
 		return true; // If middle element is target - Base Case 2
-	}
-
-	if (v[mid] > target) {
+	} else if (v[mid] > target) {
 		return binarySearch(v, low, mid - 1, target);
-	}
-
-	if (v[mid] < target) {
+	} else if (v[mid] < target) {
 		return binarySearch(v, mid + 1, high, target);
 	}
+
+	return false;
 }
 
