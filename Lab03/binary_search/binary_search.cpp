@@ -21,7 +21,11 @@ int main () {
 
 bool binarySearch(vector<int> &v, int low, int high, int target) {
 	// Range invalid - Base Case 1
-	if (low > high) { return false; }
+	if (low > high) { 
+		cout << "ERROR: Range Invalid." << endl;
+		
+		return false; 
+	}
 
 	// Finding mid-point
 	int mid = low + (high - low) / 2;
