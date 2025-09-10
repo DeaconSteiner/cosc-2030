@@ -9,7 +9,6 @@ int main() {
 	int n = 10, k = 5;
 	cout << "The binary coefficient (" << n << ", " << k << ") is " << coefficient(n, k) << endl;
 
-
 	return 0;
 }
 
