@@ -7,4 +7,6 @@ Lab 01 - Completed: August 26, 2025
 
 Lab02 - Completed: September 2, 2025
 
-Lab03 - Completed: 
+Lab03 - Completed: September 9, 2025
+
+Lab04 - Completed: September 16, 2025 
