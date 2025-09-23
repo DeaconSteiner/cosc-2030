@@ -5,13 +5,14 @@
 
 using namespace std;
 
-int main() {
+int main()
+{
     try
     {
-            int choice;
-            TTT item;
+        int choice;
+        TTT item;
 
-        Deque<TTT>* D = new Deque<TTT>();
+        Deque<TTT> *D = new Deque<TTT>();
 
         do
         {
@@ -25,17 +26,18 @@ int main() {
             cout << "7. Show size of queue." << endl;
             cout << "8. Check if queue is empty." << endl;
             cout << "9. Exit." << endl;
-            cout << "---------------" << endl; 
+            cout << "---------------" << endl;
 
             cout << "Enter your choice: ";
             cin >> choice;
 
-            if (cin.fail()) {
-                cin.clear(); // Reset error flags
+            if (cin.fail())
+            {
+                cin.clear();                                         // Reset error flags
                 cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Discard bad input
                 cout << "Invalid input. Please enter a number between 1 and 9." << endl;
                 continue;
-}
+            }
 
             switch (choice)
             {
@@ -51,12 +53,12 @@ int main() {
                 D->enqueueTail(item);
                 cout << item << " joined queue at tail." << endl;
                 break;
-            case 3: 
+            case 3:
                 try
                 {
                     D->dequeueHead();
                 }
-                catch(const std::exception& e)
+                catch (const std::exception &e)
                 {
                     std::cerr << e.what() << '\n';
                 }
@@ -66,7 +68,7 @@ int main() {
                 {
                     D->dequeueTail();
                 }
-                catch(const std::exception& e)
+                catch (const std::exception &e)
                 {
                     std::cerr << e.what() << '\n';
                 }
@@ -76,44 +78,48 @@ int main() {
                 {
                     cout << "Head item: " << D->front() << endl;
                 }
-                catch(const std::exception& e)
+                catch (const std::exception &e)
                 {
                     std::cerr << e.what() << '\n';
                 }
-                
+
                 break;
-            case 6: 
+            case 6:
                 try
                 {
                     cout << "Tail item: " << D->back() << endl;
                 }
-                catch(const std::exception& e)
+                catch (const std::exception &e)
                 {
                     std::cerr << e.what() << '\n';
                 }
                 break;
-            case 7: 
+            case 7:
                 cout << "Queue has " << D->getSize() << " items." << endl;
                 break;
             case 8:
                 if (D->isEmpty())
                 {
                     cout << "Queue is empty." << endl;
-                } else {
+                }
+                else
+                {
                     cout << "Queue is not empty." << endl;
                 }
                 break;
-            case 9: break;
-            
-            default: throw runtime_error("Please select a valid choice.");
+            case 9:
+                break;
+
+            default:
+                throw runtime_error("Please select a valid choice.");
                 break;
             }
         } while (choice != 9);
-        
+
         delete D;
         return 0;
     }
-    catch(const std::exception& e)
+    catch (const std::exception &e)
     {
         std::cerr << "Fatal error: " << e.what() << endl;
         return 1;
