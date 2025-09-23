@@ -18,6 +18,7 @@ class Deque : protected DoubleList<T>{
         const T& front() const;
         const T& back() const;
         int getSize() const;
+        void display() const;
         ~Deque();
 };
 
@@ -82,6 +83,11 @@ const T& Deque<T>::back() const {
 
 template <typename T>
 int Deque<T>::getSize() const { return size; }
+
+template <typename T>
+void Deque<T>::display() const {
+    this->traverse();
+}
 
 template<typename T>
 Deque<T>::~Deque() = default;
