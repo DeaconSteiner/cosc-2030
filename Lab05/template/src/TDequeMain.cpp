@@ -1,6 +1,6 @@
 #include <iostream>
 #include <limits>
-#include "../include/TDeque.h"
+#include "TDeque.h"
 
 using namespace std;
 
