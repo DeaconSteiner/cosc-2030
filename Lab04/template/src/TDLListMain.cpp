@@ -1,5 +1,5 @@
 #include <iostream>
-#include "../include/TDLList.h"
+#include "TDLList.h"
 
 using namespace std;
 
@@ -56,7 +56,7 @@ int main() {
             break;
         }
     } while (choice != 6);
-    
+
     delete L;
     return 0;
 }
