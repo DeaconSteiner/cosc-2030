@@ -32,7 +32,7 @@ int main()
 
         if (cin.fail())
         {
-            cin.clear();                                         // Reset error flags
+            cin.clear(); // Reset error flags
             cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Discard bad input
             cout << "Invalid input. Please enter a number between 1 and 9." << endl;
             continue;
