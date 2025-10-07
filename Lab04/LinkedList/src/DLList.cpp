@@ -1,5 +1,5 @@
 #include <iostream>
-#include "../include/DLList.h"
+#include "DLList.h"
 
 using namespace std;
 
@@ -14,7 +14,7 @@ void DoubleList::insertHead(Node* x) {
         // List is empty.
         head = tail = x;
         x->next = nullptr;
-        x->prev = nullptr;   
+        x->prev = nullptr;
     } else {
         // List is not empty.
         x->next = head;
@@ -25,7 +25,7 @@ void DoubleList::insertHead(Node* x) {
 }
 
 void DoubleList::insertTail(Node* x) {
-    if (head == nullptr && tail == nullptr) 
+    if (head == nullptr && tail == nullptr)
     {
         // List is empty.
         head = tail = x;
@@ -37,12 +37,12 @@ void DoubleList::insertTail(Node* x) {
         x->prev = tail;
         tail->next = x;
         tail = x;
-        
+
     }
 }
 
 void DoubleList::delHead() {
-    if (head == nullptr) 
+    if (head == nullptr)
     {
         cout << "The list is empty." << endl;
         return;
@@ -92,11 +92,10 @@ void DoubleList::traverse() const {
 
 DoubleList::~DoubleList() {
     Node* curr = head;
-    while (curr != nullptr) 
+    while (curr != nullptr)
     {
         Node* temp = curr;
         curr = curr->next;
         delete temp;
     }
 }
-
