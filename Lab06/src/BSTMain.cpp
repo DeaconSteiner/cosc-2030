@@ -1,5 +1,6 @@
 #include <iostream>
 #include <limits>
+#include <stdexcept>
 #include "binaryTree.hpp"
 
 using namespace std;
@@ -70,14 +71,24 @@ int main() {
                 cout << T->maximum() << " is the maximum value of the tree." << endl;
                 break;
             case 9:
-                cout << "Enter the value you'd like to know the successor of: ";
-                cin >> item;
-                cout << "The successor of " << item << " is " << T->inorderSuccessor(item) << endl;
+                try {
+                    cout << "Enter the value you'd like to know the successor of: ";
+                    cin >> item;
+                    int successor = T->inorderSuccessor(item);
+                    cout << "The successor of " << item << " is " << successor << endl;
+                } catch (const std::runtime_error &e) {
+                    cerr << "Error: " << e.what() << endl;
+                }
                 break;
             case 10:
-                cout << "Enter the value you'd like to know the predecessor of: ";
-                cin >> item;
-                cout << "The predecessor of " << item << " is " << T->inorderPredecessor(item) << endl;
+                try {
+                    cout << "Enter the value you'd like to know the predecessor of: ";
+                    cin >> item;
+                    int predecessor = T->inorderPredecessor(item);
+                    cout << "The predecessor of " << item << " is " << predecessor << endl;
+                } catch (const std::runtime_error &e) {
+                    cerr << "Error: " << e.what() << endl;
+                }
                 break;
             case 11:
                 break;
