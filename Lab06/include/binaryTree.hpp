@@ -1,5 +1,5 @@
-#ifndef _BINARY_SEARCH_TREE_H_
-#define _BINARY_SEARCH_TREE_H_
+#ifndef BINARY_SEARCH_TREE_HPP
+#define BINARY_SEARCH_TREE_HPP
 
 struct Node {
     int data;
@@ -17,10 +17,16 @@ class binaryTree {
         void inorderTraversal(Node *node) const;
         void preorderTraversal(Node *node) const;
         void postorderTraversal(Node *node) const;
-        void minimum(Node *node) const;
-        void maximum(Node *node) const;
-        void inorderSuccessor(Node *node, int value) const;
-        void inorderPredecessor(Node *node, int value) const;
+        int minimum(Node *node) const;
+        int maximum(Node *node) const;
+        int inorderSuccessor(int value, Node *node) const;
+        int inorderPredecessor(int value, Node *node) const;
+       // this is a completely hidden function, only used for internal node tracking
+        Node* findNode(int value, Node* node) const;
+        // used for candidate tracking
+        Node* findpredecessorCandidate(int value, Node* node) const;
+        Node* findsuccessorCandidate(int value, Node* node) const;
+       // cleanup, basically destructor logic
         void deleteTree(Node *node);
     public:
         // Exposed methods, simplified for user interaction
@@ -33,10 +39,10 @@ class binaryTree {
         void inorderTraversal() const;
         void preorderTraversal() const;
         void postorderTraversal() const;
-        void minimum() const;
-        void maximum() const;
-        void inorderSuccessor(int value) const;
-        void inorderPredecessor(int value) const;
+        int minimum() const;
+        int maximum() const;
+        int inorderSuccessor(int value) const;
+        int inorderPredecessor(int value) const;
 };
 
 #endif
