@@ -4,7 +4,7 @@
 #include <iostream>
 #include "TDLList.h"
 
-template <typename T>
+template<typename T>
 class Deque : protected DoubleList<T>{
     private:
         int size = 0;
@@ -31,7 +31,7 @@ void Deque<T>::enqueueHead(const T& data) {
     size++;
 }
 
-template<typename T> 
+template<typename T>
 void Deque<T>::enqueueTail(const T& data) {
     this->insertTail(data);
     size++;
@@ -57,10 +57,10 @@ void Deque<T>::dequeueTail() {
     }
 }
 
-template <typename T>
+template<typename T>
 bool Deque<T>::isEmpty() const { return this->DoubleList<T>::isEmpty(); }
 
-template <typename T>
+template<typename T>
 const T& Deque<T>::front() const {
     if (this->head == nullptr)
     {
@@ -70,7 +70,7 @@ const T& Deque<T>::front() const {
     }
 }
 
-template <typename T>
+template<typename T>
 const T& Deque<T>::back() const {
     if (this->tail == nullptr)
     {
@@ -78,10 +78,10 @@ const T& Deque<T>::back() const {
     } else {
         return this->tail->data;
     }
-    
+
 }
 
-template <typename T>
+template<typename T>
 int Deque<T>::getSize() const { return size; }
 
 template <typename T>
