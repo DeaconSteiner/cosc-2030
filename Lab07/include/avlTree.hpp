@@ -27,8 +27,14 @@ class avlTree {
         // used for candidate tracking
         Node* findpredecessorCandidate(int value, Node* node) const;
         Node* findsuccessorCandidate(int value, Node* node) const;
+        // avl logic - rotations - other cases can just use these too
         Node* rotateLeft(Node* node);
         Node* rotateRight(Node* node);
+        Node* rebalance(Node* node);
+        // other avl stuff
+        int height(Node* node);
+        int computeHeight(Node* node);
+        int balanceFactor(Node* node);
        // cleanup, basically destructor logic
         void deleteTree(Node *node);
     public:
