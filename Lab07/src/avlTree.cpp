@@ -10,11 +10,11 @@ avlTree::~avlTree() {
     deleteTree(root);
 }
 
-bool avlTree::search(int value){
+bool avlTree::search(int value) {
    return search(value, root);
 }
 
-void avlTree::insert(int value){
+void avlTree::insert(int value) {
     if (root == nullptr) {
         root = new Node;
         root->data = value;
@@ -26,7 +26,7 @@ void avlTree::insert(int value){
     }
 }
 
-void avlTree::remove(int value){
+void avlTree::remove(int value) {
     if (root == nullptr) return;
     remove(value, root);
 }
