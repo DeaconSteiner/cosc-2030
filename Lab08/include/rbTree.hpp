@@ -14,8 +14,7 @@ class rbTree {
         Node* root;
         // private helper methods to keep API clean
         bool search(int value, Node* node);
-        void insert(int value, Node*& node);
-        void remove(int value, Node*& node);
+        void insert(int value, Node*& node, Node* parent);
         // constant methods do not modify the tree
         void inorderTraversal(Node* node) const;
         void preorderTraversal(Node* node) const;
@@ -30,10 +29,9 @@ class rbTree {
         Node* findpredecessorCandidate(int value, Node* node) const;
         Node* findsuccessorCandidate(int value, Node* node) const;
         // rb logic - rotations - other cases can just use these too
-        // recolor also handles rotations by calling the methods
         Node* rotateLeft(Node* node);
         Node* rotateRight(Node* node);
-        Node* recolor(Node* node);
+        Node* fixInsert(Node* node);
        // cleanup, basically destructor logic
         void deleteTree(Node* node);
     public:
@@ -42,7 +40,6 @@ class rbTree {
         ~rbTree();
         bool search(int value);
         void insert(int value);
-        void remove(int value);
         // constant methods do not modify the tree
         void inorderTraversal() const;
         void preorderTraversal() const;
