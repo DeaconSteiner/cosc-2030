@@ -21,12 +21,16 @@ void Heap::insert(int key) {
 }
 
 int Heap::getMax() const {
+    if (heap_size == 0) {
+        throw std::runtime_error("Heap is empty!");
+    } else {
     return heap[0];
+    }
 }
 
 void Heap::deleteMax() {
     if (heap_size == 0) {
-        std::runtime_error("Cannot delete from an empty heap!");
+        throw std::runtime_error("Cannot delete from an empty heap!");
     } else {
         heap[0] = heap[heap_size - 1];
         heap_size--;
