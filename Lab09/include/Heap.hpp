@@ -1,7 +1,7 @@
 #ifndef HEAP_HPP
 #define HEAP_HPP
 
-#define MAX_SIZE 50 // Project discription specifies static array size 50
+#define MAX_SIZE 50 // Project description specifies static array size 50
 
 struct Heap {
     // Structure methods
