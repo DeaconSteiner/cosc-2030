@@ -20,3 +20,5 @@ Lab07 - Completed: October 22, 2025
 Lab08 - Completed: October 30, 2025
 
 Lab09 - Completed: November 5, 2025
+
+Lab10 - Completed: November 18, 2025
